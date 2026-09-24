@@ -1,0 +1,63 @@
+sku,product_name,category,commodity,vendor,currency
+SKU-1001,Brakes 631,Brakes,Steel,Ironclad Auto,USD
+SKU-1002,Brakes 158,Brakes,Steel,Ironclad Auto,USD
+SKU-1003,Brakes 613,Brakes,Steel,Ironclad Auto,USD
+SKU-1004,Radiators 494,Radiators,Aluminum,Ironclad Auto,USD
+SKU-1005,Radiators 371,Radiators,Aluminum,Ironclad Auto,USD
+SKU-1006,Radiators 692,Radiators,Aluminum,Ironclad Auto,USD
+SKU-1007,Radiators 976,Radiators,Aluminum,Ironclad Auto,USD
+SKU-1008,Spark Plugs 513,Spark Plugs,Copper,Ironclad Auto,USD
+SKU-1009,Spark Plugs 563,Spark Plugs,Copper,Ironclad Auto,USD
+SKU-1010,Spark Plugs 368,Spark Plugs,Copper,Ironclad Auto,USD
+SKU-1011,Spark Plugs 900,Spark Plugs,Copper,Ironclad Auto,USD
+SKU-1012,Filters 694,Filters,Paper,Zhongli Parts,CNY
+SKU-1013,Filters 104,Filters,Paper,Zhongli Parts,CNY
+SKU-1014,Filters 237,Filters,Paper,Zhongli Parts,CNY
+SKU-1015,Wipers 378,Wipers,Rubber,Zhongli Parts,CNY
+SKU-1016,Wipers 940,Wipers,Rubber,Zhongli Parts,CNY
+SKU-1017,Belts & Hoses 366,Belts & Hoses,Rubber,Zhongli Parts,CNY
+SKU-1018,Belts & Hoses 822,Belts & Hoses,Rubber,Zhongli Parts,CNY
+SKU-1019,Spark Plugs 933,Spark Plugs,Copper,Zhongli Parts,CNY
+SKU-1020,Spark Plugs 382,Spark Plugs,Copper,Zhongli Parts,CNY
+SKU-1021,Spark Plugs 599,Spark Plugs,Copper,Zhongli Parts,CNY
+SKU-1022,Brakes 968,Brakes,Steel,EuroTech GmbH,EUR
+SKU-1023,Brakes 670,Brakes,Steel,EuroTech GmbH,EUR
+SKU-1024,Batteries 516,Batteries,Lead,EuroTech GmbH,EUR
+SKU-1025,Batteries 642,Batteries,Lead,EuroTech GmbH,EUR
+SKU-1026,Batteries 965,Batteries,Lead,EuroTech GmbH,EUR
+SKU-1027,Batteries 770,Batteries,Lead,EuroTech GmbH,EUR
+SKU-1028,Radiators 231,Radiators,Aluminum,EuroTech GmbH,EUR
+SKU-1029,Radiators 638,Radiators,Aluminum,EuroTech GmbH,EUR
+SKU-1030,Radiators 119,Radiators,Aluminum,EuroTech GmbH,EUR
+SKU-1031,Filters 711,Filters,Paper,Monterrey Supply,MXN
+SKU-1032,Filters 812,Filters,Paper,Monterrey Supply,MXN
+SKU-1033,Filters 324,Filters,Paper,Monterrey Supply,MXN
+SKU-1034,Motor Oil 570,Motor Oil,Crude Oil,Monterrey Supply,MXN
+SKU-1035,Motor Oil 719,Motor Oil,Crude Oil,Monterrey Supply,MXN
+SKU-1036,Motor Oil 821,Motor Oil,Crude Oil,Monterrey Supply,MXN
+SKU-1037,Motor Oil 842,Motor Oil,Crude Oil,Monterrey Supply,MXN
+SKU-1038,Wipers 716,Wipers,Rubber,Monterrey Supply,MXN
+SKU-1039,Wipers 474,Wipers,Rubber,Monterrey Supply,MXN
+SKU-1040,Wipers 490,Wipers,Rubber,Monterrey Supply,MXN
+SKU-1041,Batteries 867,Batteries,Lead,Great Lakes Mfg,USD
+SKU-1042,Batteries 686,Batteries,Lead,Great Lakes Mfg,USD
+SKU-1043,Batteries 258,Batteries,Lead,Great Lakes Mfg,USD
+SKU-1044,Batteries 218,Batteries,Lead,Great Lakes Mfg,USD
+SKU-1045,Brakes 941,Brakes,Steel,Great Lakes Mfg,USD
+SKU-1046,Brakes 500,Brakes,Steel,Great Lakes Mfg,USD
+SKU-1047,Brakes 630,Brakes,Steel,Great Lakes Mfg,USD
+SKU-1048,Belts & Hoses 614,Belts & Hoses,Rubber,Great Lakes Mfg,USD
+SKU-1049,Belts & Hoses 565,Belts & Hoses,Rubber,Great Lakes Mfg,USD
+SKU-1050,Filters 748,Filters,Paper,Pacific Components,CNY
+SKU-1051,Filters 703,Filters,Paper,Pacific Components,CNY
+SKU-1052,Wipers 427,Wipers,Rubber,Pacific Components,CNY
+SKU-1053,Wipers 598,Wipers,Rubber,Pacific Components,CNY
+SKU-1054,Wipers 941,Wipers,Rubber,Pacific Components,CNY
+SKU-1055,Wipers 104,Wipers,Rubber,Pacific Components,CNY
+SKU-1056,Spark Plugs 210,Spark Plugs,Copper,Pacific Components,CNY
+SKU-1057,Spark Plugs 508,Spark Plugs,Copper,Pacific Components,CNY
+SKU-1058,Spark Plugs 110,Spark Plugs,Copper,Pacific Components,CNY
+SKU-1059,Motor Oil 139,Motor Oil,Crude Oil,Pacific Components,CNY
+SKU-1060,Motor Oil 998,Motor Oil,Crude Oil,Pacific Components,CNY
+SKU-1061,Motor Oil 876,Motor Oil,Crude Oil,Pacific Components,CNY
+SKU-1062,Motor Oil 278,Motor Oil,Crude Oil,Pacific Components,CNY

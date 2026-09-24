@@ -1,0 +1,36 @@
+✅ UNIFIED SETUP COMPLETE
+═══════════════════════════════════════════════════════════════
+
+📊 COST DRIVER DASHBOARD
+├─ Location: ~/Downloads/cost-driver-dashboard/
+├─ Virtual Env: .venv/ ✅
+├─ Demo Data: data/cost_facts.csv ✅ (744 rows, 62 SKUs)
+└─ Port: 8501
+
+💰 SAVINGS TRACKER  
+├─ Location: ~/Downloads/cost-driver-dashboard/modules/savings-tracker/
+├─ Virtual Env: .venv/ ✅
+├─ Database: data/savings.db ✅ (40 initiatives seeded)
+│  ├─ Projected Savings: $16.7M
+│  └─ Realized Savings: $4.8M (29% realization rate)
+└─ Port: 8502
+
+═══════════════════════════════════════════════════════════════
+
+🚀 QUICK START - Run this command:
+
+    cd ~/Downloads/cost-driver-dashboard
+    ./run_both.sh
+
+Then open in your browser:
+    📊 Cost Driver: http://localhost:8501
+    💰 Savings Tracker: http://localhost:8502
+
+═══════════════════════════════════════════════════════════════
+
+📖 Documentation:
+   • Full guide: RUN_BOTH.md
+   • Cost Driver: README.md
+   • Savings Tracker: modules/savings-tracker/README.md
+
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,119 @@
+// =============================================================================
+//  Cost Driver Dashboard - DAX Measures
+// =============================================================================
+//  Paste each measure into Power BI (Modeling > New Measure). Group them in a
+//  dedicated "_Measures" table for a clean, enterprise model.
+//
+//  Model assumptions (see POWERBI_GUIDE.md):
+//    FactCostDriver[cost_ext]  = extended cost, one row per period x SKU x driver
+//    DimPeriod[period]         related to FactCostDriver[period]  (1:*)
+//    DimProduct[sku]           related to FactCostDriver[sku]     (1:*)
+//    DimVendor[vendor]         related to FactCostDriver[vendor]  (1:*)
+//    DimDriver[driver]         related to FactCostDriver[driver]  (1:*)
+//    DimStartPeriod / DimEndPeriod = DISCONNECTED slicer tables
+// =============================================================================
+
+
+// -----------------------------------------------------------------------------
+//  1. Core measures
+// -----------------------------------------------------------------------------
+
+Total Cost = SUM ( FactCostDriver[cost_ext] )
+
+Total Units =
+CALCULATE (
+    SUM ( FactCostDriver[units] ),
+    FILTER (
+        ALL ( DimDriver ),
+        DimDriver[driver] = "Commodity / Material"   -- avoid counting units 5x (once per driver)
+    )
+)
+
+Avg Unit Cost =
+DIVIDE ( [Total Cost], [Total Units] )
+
+
+// -----------------------------------------------------------------------------
+//  2. Two-period comparison (driven by the disconnected slicers)
+// -----------------------------------------------------------------------------
+
+Start Period = SELECTEDVALUE ( DimStartPeriod[start_period] )
+
+End Period = SELECTEDVALUE ( DimEndPeriod[end_period] )
+
+Cost at Start =
+CALCULATE (
+    [Total Cost],
+    FILTER ( ALL ( DimPeriod ), DimPeriod[period] = [Start Period] )
+)
+
+Cost at End =
+CALCULATE (
+    [Total Cost],
+    FILTER ( ALL ( DimPeriod ), DimPeriod[period] = [End Period] )
+)
+
+Cost Change =
+[Cost at End] - [Cost at Start]
+
+Cost Change % =
+DIVIDE ( [Cost Change], [Cost at Start] )
+
+
+// -----------------------------------------------------------------------------
+//  3. Waterfall driver delta
+//  Put DimDriver[driver] on the Waterfall visual's Category and use this as the
+//  Y value. Each driver's bar = its own change between the two selected periods.
+// -----------------------------------------------------------------------------
+
+Driver Delta =
+VAR StartVal =
+    CALCULATE (
+        [Total Cost],
+        FILTER ( ALL ( DimPeriod ), DimPeriod[period] = [Start Period] )
+    )
+VAR EndVal =
+    CALCULATE (
+        [Total Cost],
+        FILTER ( ALL ( DimPeriod ), DimPeriod[period] = [End Period] )
+    )
+RETURN
+    EndVal - StartVal
+
+
+// -----------------------------------------------------------------------------
+//  4. Vendor negotiation opportunity
+//  The change coming specifically from vendor pricing behavior - the slice that
+//  is addressable through negotiation (not commodity / freight / FX pass-through).
+// -----------------------------------------------------------------------------
+
+Vendor-Driven Change =
+CALCULATE (
+    [Cost Change],
+    FILTER ( ALL ( DimDriver ), DimDriver[driver] = "Vendor / Negotiation" )
+)
+
+Vendor-Driven % of Total Change =
+DIVIDE ( [Vendor-Driven Change], [Cost Change] )
+
+
+// -----------------------------------------------------------------------------
+//  5. Presentation helpers (KPI card formatting & conditional colour)
+// -----------------------------------------------------------------------------
+
+Cost Change (Label) =
+VAR v = [Cost Change]
+VAR sign = IF ( v < 0, "-", "+" )
+VAR a = ABS ( v )
+RETURN
+    sign & "$" &
+    SWITCH (
+        TRUE (),
+        a >= 1e6, FORMAT ( a / 1e6, "0.00" ) & "M",
+        a >= 1e3, FORMAT ( a / 1e3, "0.0" ) & "K",
+        FORMAT ( a, "0" )
+    )
+
+// Use in conditional formatting: cost going UP is bad (red), DOWN is good (green).
+Cost Change Colour =
+IF ( [Cost Change] > 0, "#C00000", "#107C41" )

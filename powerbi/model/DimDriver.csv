@@ -1,0 +1,6 @@
+driver,sort_order
+Commodity / Material,1
+Freight,2
+Currency (FX),3
+Vendor / Negotiation,4
+Tariff / Duty,5

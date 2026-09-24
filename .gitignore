@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Streamlit
+.streamlit/
+.streamlit_cache/
+*.streamlit.cache
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Data & CSV files (keep templates, ignore generated)
+data/cost_facts.csv
+modules/savings-tracker/data/savings.db
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
