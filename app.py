@@ -63,21 +63,21 @@ observer.observe(document.body, {
     /* Remove conflicting styles - let Streamlit theme handle basics */
     
     body, [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+        background: linear-gradient(135deg, #f8fafc 0%, #eef3f9 50%, #e6eef7 100%) !important;
     }
     
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #16213e 0%, #0f3460 100%) !important;
+        background: linear-gradient(180deg, #ffffff 0%, #eef3f9 100%) !important;
     }
     
     /* Typography */
     h1, h2, h3, h4 {
-        color: #ecf0f1 !important;
+        color: #1a1a2e !important;
         font-weight: 700 !important;
     }
     
     label, .stLabel {
-        color: #ecf0f1 !important;
+        color: #1a1a2e !important;
         font-weight: 500 !important;
     }
     
@@ -132,7 +132,7 @@ observer.observe(document.body, {
     
     /* Chart containers */
     .stPlotlyChart {
-        background: rgba(26, 26, 46, 0.3) !important;
+        background: rgba(255, 255, 255, 0.7) !important;
         border-radius: 12px !important;
         padding: 20px !important;
         border: 1px solid rgba(0, 102, 204, 0.2) !important;
@@ -140,13 +140,13 @@ observer.observe(document.body, {
     
     /* Data frame */
     .stDataFrame {
-        background: rgba(22, 33, 62, 0.5) !important;
+        background: rgba(255, 255, 255, 0.8) !important;
         border-radius: 12px !important;
     }
     
     /* Expandable sections */
     .stExpander {
-        background: rgba(15, 52, 96, 0.3) !important;
+        background: rgba(255, 255, 255, 0.6) !important;
         border-radius: 8px !important;
         border: 1px solid rgba(0, 102, 204, 0.2) !important;
     }
@@ -204,11 +204,11 @@ st.sidebar.caption("Sourcing Advisory Analytics")
 st.sidebar.markdown("""
 <style>
     [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
-        color: #ecf0f1 !important;
+        color: #1a1a2e !important;
     }
     
     [data-testid="stSidebar"] .stMarkdown {
-        color: #ecf0f1 !important;
+        color: #1a1a2e !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -250,7 +250,7 @@ st.markdown(f"""
     border-left: 4px solid #0066CC;
     margin-bottom: 30px;
 ">
-    <p style="margin: 0; color: #b0bec5; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
+    <p style="margin: 0; color: #5a6a7a; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
         📈 Analysis Period: <strong>{start_period}</strong> → <strong>{end_period}</strong> 
         | {df['sku'].nunique()} SKUs | {df['vendor'].nunique()} Vendors | {df['category'].nunique()} Categories
     </p>
@@ -271,7 +271,7 @@ with col1:
         border-left: 4px solid #0066CC;
         text-align: center;
     ">
-        <p style="margin: 0; color: #b0bec5; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Total Cost ({start_period})</p>
+        <p style="margin: 0; color: #5a6a7a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Total Cost ({start_period})</p>
         <p style="margin: 10px 0 0 0; color: #0066CC; font-size: 26px; font-weight: 700;">{money(k['start_total'])}</p>
     </div>
     """, unsafe_allow_html=True)
@@ -285,7 +285,7 @@ with col2:
         border-left: 4px solid #2ECC71;
         text-align: center;
     ">
-        <p style="margin: 0; color: #b0bec5; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Total Cost ({end_period})</p>
+        <p style="margin: 0; color: #5a6a7a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Total Cost ({end_period})</p>
         <p style="margin: 10px 0 0 0; color: #2ECC71; font-size: 26px; font-weight: 700;">{money(k['end_total'])}</p>
     </div>
     """, unsafe_allow_html=True)
@@ -301,9 +301,9 @@ with col3:
         border-left: 4px solid #E74C3C;
         text-align: center;
     ">
-        <p style="margin: 0; color: #b0bec5; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Cost Change</p>
+        <p style="margin: 0; color: #5a6a7a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Cost Change</p>
         <p style="margin: 10px 0 0 0; color: {delta_color}; font-size: 26px; font-weight: 700;">{delta_icon} {money(k['change'])}</p>
-        <p style="margin: 5px 0 0 0; color: #999; font-size: 12px;">{k['pct_change']:+.1f}%</p>
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 12px;">{k['pct_change']:+.1f}%</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -316,9 +316,9 @@ with col4:
         border-left: 4px solid #9B59B6;
         text-align: center;
     ">
-        <p style="margin: 0; color: #b0bec5; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Vendor-Driven (Addressable)</p>
+        <p style="margin: 0; color: #5a6a7a; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Vendor-Driven (Addressable)</p>
         <p style="margin: 10px 0 0 0; color: #9B59B6; font-size: 26px; font-weight: 700;">{money(k['vendor_driven'])}</p>
-        <p style="margin: 5px 0 0 0; color: #999; font-size: 11px;">Negotiation opportunity</p>
+        <p style="margin: 5px 0 0 0; color: #666; font-size: 11px;">Negotiation opportunity</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -328,7 +328,7 @@ st.divider()
 # Waterfall: the flagship view
 # ---------------------------------------------------------------------------
 st.markdown("### 💧 Cost Change Waterfall")
-st.markdown("<p style='color: #b0bec5; font-size: 13px; margin-bottom: 20px;'>How did total landed cost move, and which drivers caused it?</p>", unsafe_allow_html=True)
+st.markdown("<p style='color: #5a6a7a; font-size: 13px; margin-bottom: 20px;'>How did total landed cost move, and which drivers caused it?</p>", unsafe_allow_html=True)
 
 wf = an.waterfall_decomposition(df, start_period, end_period)
 measure = ["absolute"] + ["relative"] * (len(wf) - 2) + ["total"]
@@ -340,7 +340,7 @@ fig_wf = go.Figure(go.Waterfall(
     y=wf["value"].tolist(),
     text=[money(v) for v in wf["value"]],
     textposition="outside",
-    connector={"line": {"color": "rgba(255, 255, 255, 0.2)"}},
+    connector={"line": {"color": "rgba(0, 0, 0, 0.15)"}},
     increasing={"marker": {"color": "#E74C3C"}},   # cost up = red
     decreasing={"marker": {"color": "#2ECC71"}},   # cost down = green
     totals={"marker": {"color": "#0066CC"}},
@@ -354,8 +354,8 @@ fig_wf.update_layout(
     showlegend=False,
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0.05)",
-    font=dict(color="#ecf0f1", family="Arial"),
-    yaxis=dict(gridcolor="rgba(255, 255, 255, 0.1)"),
+    font=dict(color="#1a1a2e", family="Arial"),
+    yaxis=dict(gridcolor="rgba(0, 0, 0, 0.08)"),
 )
 
 st.plotly_chart(fig_wf, use_container_width=True, config={"displayModeBar": True})
@@ -367,7 +367,7 @@ left, right = st.columns(2, gap="medium")
 
 with left:
     st.markdown("### 📈 Cost Composition Over Time")
-    st.markdown("<p style='color: #b0bec5; font-size: 13px;'>Stacked driver contribution each quarter.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='color: #5a6a7a; font-size: 13px;'>Stacked driver contribution each quarter.</p>", unsafe_allow_html=True)
     trend = an.driver_trend(df)
     fig_trend = px.area(
         trend, x="period", y="cost", color="driver",
@@ -383,15 +383,15 @@ with left:
         legend=dict(orientation="v", x=1.02, y=1),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0.05)",
-        font=dict(color="#ecf0f1", family="Arial"),
-        yaxis=dict(gridcolor="rgba(255, 255, 255, 0.1)"),
+        font=dict(color="#1a1a2e", family="Arial"),
+        yaxis=dict(gridcolor="rgba(0, 0, 0, 0.08)"),
         hovermode="x unified",
     )
     st.plotly_chart(fig_trend, use_container_width=True)
 
 with right:
     st.markdown("### 🎯 Driver Impact by Category")
-    st.markdown(f"<p style='color: #b0bec5; font-size: 13px;'>Cost change by category, {start_period} → {end_period}.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color: #5a6a7a; font-size: 13px;'>Cost change by category, {start_period} → {end_period}.</p>", unsafe_allow_html=True)
     cat = an.category_driver_breakdown(df, start_period, end_period)
     fig_cat = px.bar(
         cat, x="delta", y="category", color="driver", orientation="h",
@@ -406,8 +406,8 @@ with right:
         legend=dict(orientation="v", x=1.02, y=1),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0.05)",
-        font=dict(color="#ecf0f1", family="Arial"),
-        xaxis=dict(gridcolor="rgba(255, 255, 255, 0.1)"),
+        font=dict(color="#1a1a2e", family="Arial"),
+        xaxis=dict(gridcolor="rgba(0, 0, 0, 0.08)"),
         barmode="relative",
         hovermode="y unified",
     )
@@ -420,7 +420,7 @@ st.markdown("---")
 # ---------------------------------------------------------------------------
 st.markdown("### 🎯 Vendor Cost Change & Negotiation Opportunity")
 st.markdown("""
-<p style='color: #b0bec5; font-size: 13px; margin-bottom: 20px;'>
+<p style='color: #5a6a7a; font-size: 13px; margin-bottom: 20px;'>
 Vendors ranked by total cost increase. <strong style='color: #E74C3C;'>Vendor-Driven Change</strong> isolates increases not explained by commodity/freight/FX - the strongest negotiation targets.
 </p>
 """, unsafe_allow_html=True)
@@ -443,7 +443,7 @@ def color_delta(val):
             return 'color: #E74C3C; font-weight: 600;'
         elif val < 0:
             return 'color: #2ECC71; font-weight: 600;'
-    return 'color: #ecf0f1;'
+    return 'color: #1a1a2e;'
 
 styled = vend_display.style.format({
     f"Cost {start_period}": lambda v: money(v),
@@ -467,7 +467,7 @@ with st.expander("🔍 View & export underlying SKU-level data", expanded=False)
     ]
     detail = df[detail_cols].sort_values(["period", "category", "vendor"])
     
-    st.markdown(f"<p style='color: #b0bec5; font-size: 12px; margin-bottom: 15px;'><strong>{len(detail)}</strong> SKU-level records across selected filters</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color: #5a6a7a; font-size: 12px; margin-bottom: 15px;'><strong>{len(detail)}</strong> SKU-level records across selected filters</p>", unsafe_allow_html=True)
     
     st.dataframe(detail, use_container_width=True, hide_index=True)
     st.download_button(
@@ -480,7 +480,7 @@ with st.expander("🔍 View & export underlying SKU-level data", expanded=False)
 st.markdown("---")
 st.markdown("""
 <p style='
-    color: #999;
+    color: #666;
     font-size: 12px;
     text-align: center;
     padding-top: 20px;
