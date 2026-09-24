@@ -136,15 +136,3 @@ The suite verifies the additive decomposition, waterfall reconciliation, KPI
 consistency, and filtering behavior.
 
 ---
-
-## Presenting to leadership
-
-Suggested 3-minute narrative:
-
-1. **Start with the KPI row** — total cost change and the addressable, vendor-driven slice.
-2. **Walk the waterfall** — "Cost rose $X; here's the split: commodities did this,
-   freight this, FX this, and *this* portion is vendor pricing we can negotiate."
-3. **Land on the vendor table** — a prioritized, dollar-sized negotiation target list.
-
-This connects market intelligence to a concrete, fact-based savings pipeline —
-exactly the value a Sourcing Advisory Analyst delivers.
